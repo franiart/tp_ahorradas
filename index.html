@@ -27,7 +27,7 @@
     <section class=" flex place-content-center mt-16 mb-16" id="seccion-balance">  
         <div class="basis-1/5">
             <!-- box - balance -->
-            <div class="shadow-md py-5 px-5 rounded-lg bg-slate-50" id="balance">
+            <div class="shadow-md py-5 px-5 rounded-lg bg-slate-50" id="box-balance">
                 <h2 class="text-3xl font-bold pb-5">Balance</h2>
                 <div class="flex justify-between items-center py-5">
                     <p class="text-xl">Ganancias</p>
@@ -44,10 +44,10 @@
             </div>
 
             <!-- box - filtros -->    
-            <div class="shadow-md py-5 px-5 mt-5 rounded-lg bg-slate-50" id="filtros">
+            <div class="shadow-md py-5 px-5 mt-5 rounded-lg bg-slate-50" id="box-filtros">
                 <div class="flex justify-between items-center">
                     <h3 class="text-2xl font-bold">Filtros</h3>
-                    <a href="#" class="text-blue-600 hover:text-blue-900">Ocultar filtros</a>
+                    <a href="#" class="text-blue-600 hover:text-blue-900" id="ocultarFiltros">Ocultar filtros</a>
                 </div>
 
                 <div class="flex flex-col">
@@ -91,11 +91,11 @@
         </div>
 
         <!-- box - operaciones -->
-        <div class="basis-2/4" id="operaciones-balance">
+        <div class="basis-2/4" id="box-operaciones">
             <div class="my-auto shadow-md py-5 px-5 rounded-lg bg-slate-50 ml-5">
                 <div class="flex justify-between">
                     <h3 class="text-2xl font-bold">Operaciones</h3>
-                    <button class="text-white px-4 py-2 rounded-md hover:bg-blue-700 bg-blue-900">+ Nueva operación</button>
+                    <button class="text-white px-4 py-2 rounded-md hover:bg-blue-700 bg-blue-900" id="btn-nuevaOperacion">+ Nueva operación</button>
                 </div>
             <!-- box - operaciones // cuando no hay operaciones -->
                 <div class="grid justify-items-center py-10" id="sin-operaciones">
@@ -119,7 +119,7 @@
     </section>
 
     <!--------------------- SECCIÓN - NUEVA OPERACIÓN --------------------->
-    <section class="flex place-content-center mt-16 mb-16" id="seccion-nuevaOperacion">
+    <section class="hidden flex place-content-center mt-16 mb-16" id="seccion-nuevaOperacion">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Nueva operación</h2>
         <!-- input-descripción -->
@@ -166,7 +166,7 @@
     </section>
 
     <!--------------------- SECCIÓN - EDITAR OPERACIÓN --------------------->
-    <section class="flex place-content-center mt-16 mb-16" id="seccion-editarOperacion">
+    <section class="hidden flex place-content-center mt-16 mb-16" id="seccion-editarOperacion">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Editar operación</h2>
         <!-- input-descripción -->
@@ -275,7 +275,7 @@
     </section>
 
     <!--------------------- EDITAR - CATEGORÍAS --------------------->
-    <section class="flex place-content-center mt-16 mb-16" id="seccion-editarCategoria">
+    <section class="hidden flex place-content-center mt-16 mb-16" id="seccion-editarCategoria">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Editar categoría</h2>
             <div class="flex flex-col pb-10">
