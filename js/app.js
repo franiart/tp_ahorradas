@@ -35,3 +35,6 @@ vistaReportes.addEventListener('click', ()=>{
     seccionCategorias.classList.add('hidden')
     seccionReportes.classList.remove('hidden')
 })
+
+//SECCIÓN NUEVA OPERACIÓN
+const btnNuevaOperacion = document.getElementById("btn-nuevaOperacion");
