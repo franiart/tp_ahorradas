@@ -5,27 +5,27 @@ let categoriasLocalStorage = JSON.parse(localStorage.getItem("categorias"));
 let categorias = categoriasLocalStorage || [
   {
     nombre: "Comida",
-    id: "comida",
+    id: uuidv4(),
   },
   {
     nombre: "Servicios",
-    id: "servicios",
+    id: uuidv4(),
   },
   {
     nombre: "Salidas",
-    id: "salidas",
+    id: uuidv4(),
   },
   {
     nombre: "Educación",
-    id: "educacion",
+    id: uuidv4(),
   },
   {
     nombre: "Transporte",
-    id: "transporte",
+    id: uuidv4(),
   },
   {
     nombre: "Trabajo",
-    id: "trabajo",
+    id: uuidv4(),
   },
 ];
 
@@ -34,9 +34,10 @@ let categoriaSeleccionada;
 // ****---- Functions ----****
 
 const eliminarCategoria = (id) => {
-  eliminarOperacionCategoria(id);
-
+  
   categorias = categorias.filter((categoria) => categoria.id !== id);
+
+  eliminarOperacionCategoria(id);
 
   actualizarCategorias();
 };
@@ -70,16 +71,16 @@ const mostrarCategoria = (categorias) => {
 
   for (const { nombre, id } of categorias) {
     $selectCategoriaNewOperacion.innerHTML += `<option value="${nombre}" id="${id}">${nombre}</option>`;
-    $inputEditCategoria.innerHTML += `<option value="${nombre}" id="${id}">${nombre}</option>`;
+    $inputEditCategoriaOperacion.innerHTML += `<option value="${nombre}" id="${id}">${nombre}</option>`;
 
     $filtroCategoria.innerHTML += `<option value="${nombre}" id="${id}">${nombre}</option>`;
 
-    divContainer.innerHTML += `<div class="flex justify-between py-5">
-        <span class="bg-blue-100 text-xs font-medium mr-2 px-2 py-1 rounded text-blue-900">${nombre}</span>
-            <div class="">
-                <a href="#" class="editarCategoria text-xs text-blue-600 hover:text-blue-900" id="${id}">Editar</a>
-                <a href="#" class="deleteCategoria text-xs text-blue-600 hover:text-blue-900" id="${id}">Eliminar</a>
-            </div>
+    divContainer.innerHTML += `<div class="flex justify-between pb-5">
+          <span class="bg-blue-100 text-xs font-medium mr-2 px-2 py-1 rounded text-blue-900">${nombre}</span>
+          <div class="flex justify-end">
+            <a href="#" class="btn-categoria-edit text-xs text-blue-600 hover:text-blue-900" id="${id}">Editar</a>
+            <a href="#" class="btn-categoria-delete text-xs text-blue-600 hover:text-blue-900" id="${id}">Eliminar</a>
+          </div>
         </div>`;
   }
 
@@ -91,9 +92,9 @@ const mostrarCategoria = (categorias) => {
     };
   }
 
-  const btnEditarCategoria = divContainer.querySelectorAll(".btn-categoria-edit");
+  const btnEditaCategoria = divContainer.querySelectorAll(".btn-categoria-edit");
 
-  for (const button of btnEditarCategoria) {
+  for (const button of btnEditaCategoria) {
     button.onclick = () => {
       editarCategoria(button.id);
     };
@@ -114,7 +115,7 @@ $btnAgregarCategoria.addEventListener("click", (event) => {
 
   const nuevaCategoria = {
     nombre: $inputNuevaCategoria.value,
-    id: uuid.v1(),
+    id: uuidv4(),
   };
 
   categorias.push(nuevaCategoria);
@@ -128,14 +129,14 @@ $btnCancelarEditCategoria.addEventListener("click", (e) => {
   e.preventDefault();
 
   ocultarElemento($seccionEditarCategoria);
-  mostrarElemento($seccionCategorias);
+  mostrarElemento($boxCategoria);
 });
 
-$btnEditarCategoria.addEventListener("submit", (e) => {
+$btnEditarCategoria.addEventListener("click", (e) => {
   e.preventDefault();
 
   ocultarElemento($seccionEditarCategoria);
-  mostrarElemento($seccionCategorias);
+  mostrarElemento($boxCategoria);
 
   categorias = categorias.map((categoria) => {
     if (categoria.id === categoriaSeleccionada.id) {
