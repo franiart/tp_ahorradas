@@ -78,12 +78,12 @@ const filtroTipo = (filtro, operaciones) => {
   };
   
   let filtroOperacion = ()=>{
-    let filtrandoOperaciones = [...operations];
+    let filtrandoOperaciones = [...operaciones];
   
-    filtrandoOperaciones = filtroTipo($selectType.value, filtrandoOperaciones );
-    filtrandoOperaciones = filtroCategoria($selectCategory.value, filtrandoOperaciones);
-    filtrandoOperaciones = filtroOrden($selectOrder.value, filtrandoOperaciones);
-    filtrandoOperaciones = filtroFecha($inputFilterDate.value, filtrandoOperaciones);
+    filtrandoOperaciones = filtroTipo($filtroTipo.value, filtrandoOperaciones );
+    filtrandoOperaciones = filtroCategoria($filtroCategoria.value, filtrandoOperaciones);
+    filtrandoOperaciones = filtroOrden($filtroOrdenar.value, filtrandoOperaciones);
+    filtrandoOperaciones = filtroFecha($filtroFecha.value, filtrandoOperaciones);
     
     return filtrandoOperaciones;
     }
