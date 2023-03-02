@@ -36,6 +36,7 @@ const $balanceGanancias = $('#balance-ganancias');
 const $balanceGastos = $('#balance-gastos');
 const $balanceTotal = $('#balance-total');
 //Filtros
+const $filtrosBalance = $('.filtros');
 const $boxFiltros = $("#box-filtros");
 const $filtroTipo = $("#filtro-tipo");
 const $filtroCategoria = $("#filtro-categoria");
