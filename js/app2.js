@@ -21,6 +21,7 @@ const $seccionEditarCategoria = $("#seccion-editarCategoria");
 //ELEMENTOS DE VISTA CATEGORÍA
 const $boxCategoria = $(".box-categoria");
 const $inputEditCategoria = $('#input-editarCategoria');
+const $inputEditCategoriaOperacion = $('#select-editar-tipoCategoria');
 const $selectCategoriaNewOperacion = $('#select-tipoCategoria');
 const $divCategoria = $('.cont-categoria');
 const $btnAgregarCategoria = $('#btn-agregarCategoria');
