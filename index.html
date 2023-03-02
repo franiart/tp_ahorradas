@@ -24,22 +24,22 @@
     </header>
 
     <!--------------------- SECCIÓN - BALANCE --------------------->
-    <section class=" flex place-content-center mt-16 mb-16" id="seccion-balance">  
+    <section class="seccion flex place-content-center mt-16 mb-16" id="seccion-balance">  
         <div class="basis-1/5">
             <!-- box - balance -->
             <div class="shadow-md py-5 px-5 rounded-lg bg-slate-50" id="box-balance">
                 <h2 class="text-3xl font-bold pb-5">Balance</h2>
                 <div class="flex justify-between items-center py-5">
                     <p class="text-xl">Ganancias</p>
-                    <p class="text-green-600">+$0</p>
+                    <p class="text-green-600" id="balance-ganancias">+$0</p>
                 </div>
                 <div class="flex justify-between items-center py-3">
                     <p class="text-xl">Gastos</p>
-                    <p class="text-red-600">-0$</p>
+                    <p class="text-red-600" id="balance-gastos">-0$</p>
                 </div>
                 <div class="flex justify-between items-center pt-5">
                     <p class="text-2xl">Total</p>
-                    <p class="font-bold">$0</p>
+                    <p class="font-bold" id="balance-total">$0</p>
                 </div>
             </div>
 
@@ -106,12 +106,17 @@
                     </div>
                 </div>
             <!-- box - operaciones // cuando hay operaciones -->
-                <div class="hidden flex font-semibold justify-between py-10" id="existe-operaciones">
-                    <div class="">Descripción</div>
-                    <div class="">Categoría</div>
-                    <div class="">Fecha</div>
-                    <div class="">Monto</div>
-                    <div class="">Acciones</div>
+                <div class="hidden font-semibold py-10" id="existe-operaciones">
+                    <div class="flex justify-between">
+                        <span class="">Descripción</span>
+                        <span class="">Categoría</span>
+                        <span class="">Fecha</span>
+                        <span class="">Monto</span>
+                        <span class="">Acciones</span>
+                    </div>
+                    <div id="operaciones">
+
+                    </div>
                 </div>
             
             </div>
@@ -119,7 +124,7 @@
     </section>
 
     <!--------------------- SECCIÓN - NUEVA OPERACIÓN --------------------->
-    <section class="hidden flex place-content-center mt-16 mb-16" id="seccion-nuevaOperacion">
+    <section class="seccion hidden flex place-content-center mt-16 mb-16" id="seccion-nuevaOperacion">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Nueva operación</h2>
         <!-- input-descripción -->
@@ -143,9 +148,9 @@
         <!-- select-categoría --> 
             <div class="flex flex-col pb-3">
                 <label class="label font-semibold" for="select-tipoCategoria">Categoría</label>
-                <select class="px-2 py-2 mt-2 rounded-md border-2 border-gray-300 bg-transparent" id="select-tipoCategoria">
-                    <option value="gasto">Comida</option>
-                    <option value="ganancia">Servicios</option>
+                <select class="select-tipoCategoria px-2 py-2 mt-2 rounded-md border-2 border-gray-300 bg-transparent" id="select-tipoCategoria">
+                    <option value="comida">Comida</option>
+                    <option value="servicios">Servicios</option>
                     <option value="salidas">Salidas</option>
                     <option value="educacion">Educación</option>
                     <option value="transporte">Transporte</option>
@@ -166,7 +171,7 @@
     </section>
 
     <!--------------------- SECCIÓN - EDITAR OPERACIÓN --------------------->
-    <section class="hidden flex place-content-center mt-16 mb-16" id="seccion-editarOperacion">
+    <section class="seccion hidden flex place-content-center mt-16 mb-16" id="seccion-editarOperacion">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Editar operación</h2>
         <!-- input-descripción -->
@@ -191,8 +196,8 @@
             <div class="flex flex-col pb-3">
                 <label class="label font-semibold" for="select-editar-tipoCategoria">Categoría</label>
                 <select class="px-2 py-2 mt-2 rounded-md border-2 border-gray-300 bg-transparent" id="select-editar-tipoCategoria">
-                    <option value="gasto">Comida</option>
-                    <option value="ganancia">Servicios</option>
+                    <option value="comida">Comida</option>
+                    <option value="servicios">Servicios</option>
                     <option value="salidas">Salidas</option>
                     <option value="educacion">Educación</option>
                     <option value="transporte">Transporte</option>
@@ -207,19 +212,19 @@
         <!-- botones -->
             <div class="flex justify-end mt-10">
                 <button class="text-black px-4 py-2 mr-3 rounded-md hover:bg-gray-300 bg-gray-200" id="btn-editar-cancelarOperacion">Cancelar</button>
-                <button class="text-white px-4 py-2 rounded-md hover:bg-blue-700 bg-blue-900" id="btn-editar-agregarOperacion">Agregar</button>
+                <button class="text-white px-4 py-2 rounded-md hover:bg-blue-700 bg-blue-900" id="btn-editar-agregarOperacion">Editar</button>
             </div>
         </div>
     </section>
 
     <!--------------------- SECCIÓN - CATEGORÍAS --------------------->
-    <section class="flex place-content-center mt-16 mb-16" id="seccion-categorias">
-        <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
+    <section class="seccion hidden flex place-content-center mt-16 mb-16" id="seccion-categorias">
+        <div class="box-categoria shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Categorías</h2>
             <div class="flex flex-col pb-10">
-                <label for="input-nombre-categoria" class="label font-semibold">Nombre</label>
+                <label for="input-nombreCategoria" class="label font-semibold">Nombre</label>
                 <div class="flex justify-between pt-2">
-                <input class="input w-11/12 px-2 py-2 mr-3 rounded-md border-2 border-gray-300 bg-transparent" type="text" id="input-nombre-categoria">
+                <input class="input w-11/12  px-2 py-2 mr-3 rounded-md border-2 border-gray-300 bg-transparent" type="text" id="input-nombre-categoria">
                 <button class="text-white px-4 py-2 rounded-md hover:bg-blue-700 bg-blue-900" id="btn-agregarCategoria">Agregar</button>
                 </div> 
             </div>  
@@ -271,11 +276,15 @@
                     <a href="#" class="deleteCategoria text-xs text-blue-600 hover:text-blue-900">Eliminar</a>
                 </div>
             </div>
+
+            <div class="cont-categoria flex justify-between pb-5">
+
+            </div>
         </div> 
     </section>
 
     <!--------------------- EDITAR - CATEGORÍAS --------------------->
-    <section class="hidden flex place-content-center mt-16 mb-16" id="seccion-editarCategoria">
+    <section class="seccion hidden flex place-content-center mt-16 mb-16" id="seccion-editarCategoria">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-3xl font-bold pb-5">Editar categoría</h2>
             <div class="flex flex-col pb-10">
@@ -286,11 +295,15 @@
             <div class="flex justify-end mt-10">
                 <button class="text-black px-4 py-2 mr-3 rounded-md hover:bg-gray-300 bg-gray-200" id="btn-cancelarEditarCategoria">Cancelar</button>
                 <button class="text-white px-4 py-2 rounded-md hover:bg-blue-700 bg-blue-900" id="btn-editarCategoria">Editar</button>
-            </div>   
+            </div>
+            
+            <div class="cont-categoria flex justify-between pb-5">
+
+            </div>
     </section>
 
     <!--------------------- SECCIÓN - REPORTES --------------------->
-    <section class="flex place-content-center mt-16 mb-16" id="seccion-reportes">
+    <section class="seccion hidden flex place-content-center mt-16 mb-16" id="seccion-reportes">
         <div class="shadow-md w-7/12 py-5 px-5 rounded-lg bg-slate-50">
             <h2 class="text-4xl font-bold pb-5">Reportes</h2>
             <!-- vista cuando no hay operaciones que reportar -->
@@ -304,7 +317,7 @@
                 </div>
             </div>
             <!-- resumen de reporte -->
-            <div class="mx-5">
+            <div class="mx-5" id="reporteResumen">
                 <h3 class="text-2xl font-semibold py-9">Resumen</h3>
                 <!-- mayor ganancia -->
                 <div class="flex justify-between mb-5">
@@ -346,11 +359,8 @@
                     <p class="font-semibold">Balance</p>
                 </div>
                 
-                <div class="flex justify-between mb-5">
-                    <p class="font-semibold">Servicios</p>
-                    <p class="text-green-600 grid">+$50</p>
-                    <p class="text-red-600">-$2</p>
-                    <p class="">$48</p>
+                <div class="flex justify-between mb-5 totalPorCategoria">
+
                 </div>
 
                 <div class="flex justify-between mb-5">
@@ -360,7 +370,7 @@
                     <p class="text-red-600">-$150</p>
                 </div>
                 <!-- totales por mes -->
-                <h3 class="text-2xl font-semibold py-10">Totales por mes</h3>
+                <h3 class="text-2xl font-semibold py-10 totalPorMes">Totales por mes</h3>
                 <div class="flex justify-between mb-5">
                     <p class="font-semibold">Mes</p>
                     <p class="font-semibold">Ganancias</p>
@@ -377,7 +387,8 @@
             </div>
         </div>
     </section>
-
-    <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="js/app2.js"></script>
+    <script src="js/operaciones.js"></script>
 </body>
 </html>
