@@ -120,4 +120,3 @@ const filtroTipo = (filtro, operaciones) => {
     pintarOperaciones(filtroOperacion());
     mostrarBalance(boxBalance(filtroOperacion()));
   });
-  
