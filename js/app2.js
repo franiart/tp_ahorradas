@@ -79,6 +79,9 @@ const $btnCancelarEditarOperacion = $('#btn-editar-cancelarOperacion');
 //SECCION REPORTES
 const $boxReporteSinOperaciones = $("#sin-operacionesReporte");
 const $boxReporteResumen = $("#reporteResumen");
+const $reporteTotalPorCategoria = $('.totalPorCategoria');
+const $reporteTotalPorMes = $('.totalPorMes');
+const $reporteResumen = $('#reporteResumen');
 
 const $$sections = $$(".seccion");
 
