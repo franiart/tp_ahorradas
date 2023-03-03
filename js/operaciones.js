@@ -34,6 +34,8 @@ let operacionesLocalStorage = JSON.parse(
     $balanceGastos.innerText = `-$${balance.gasto}`;
     $balanceTotal.innerText = `$${balance.total}`;
   };
+
+  
    
   const eliminarOperacion = (id) => {
      operaciones = operaciones.filter((operacion) => operacion.id !== id);
@@ -111,7 +113,7 @@ let operacionesLocalStorage = JSON.parse(
   const actualizacionOperaciones = () => {
     localStorage.setItem("datosIngresados", JSON.stringify(operaciones));
     pintarOperaciones(operaciones);
-    //mostrarBalance(boxBalance(operaciones));
+    mostrarBalance(boxBalance(operaciones));
   };
   
   // ****---- Function to add current date in "formulary new operation" ----****
