@@ -2,24 +2,24 @@
 
 const filtroTipo = (filtro, operaciones) => {
 
-    let tipo = [];
+    let tipoFiltro = [];
     if (filtro === "todos") {
-      tipo = operaciones;
+      tipoFiltro = operaciones;
     } else {
-      tipo = operaciones.filter((operacion) => operacion.tipo === filtro)
+      tipoFiltro = operaciones.filter((operacion) => operacion.tipo === filtro)
     }
-    return tipo;
+    return tipoFiltro;
   };
   
   const filtroCategoria = (filtro, operaciones) => {
   
-    let categoria = [];
+    let categoriaFiltro = [];
     if (filtro === "todas") {
-      categoria = operaciones;
+      categoriaFiltro = operaciones;
     } else {
-     categoria = operaciones.filter((operacion) => operacion.categoria === filtro)
+     categoriaFiltro = operaciones.filter((operacion) => operacion.categoria === filtro)
     }
-    return categoria;
+    return categoriaFiltro;
   
   };
   
@@ -119,4 +119,4 @@ const filtroTipo = (filtro, operaciones) => {
   $filtroOrdenar.addEventListener("change", () => {
     pintarOperaciones(filtroOperacion());
     mostrarBalance(boxBalance(filtroOperacion()));
-  });
+  }); 
