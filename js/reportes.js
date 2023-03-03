@@ -48,9 +48,9 @@ let obtenerTotalCategoria = () => {
       filtro: "",
       monto: 0
   }
-   const objectToIterate = Object.keys(object);
+   const paraIterar = Object.keys(object);
   
-    for (const key of objectToIterate) {
+    for (const key of paraIterar) {
       if (object[key][keyFilter] > montoMasAlto.monto) {
         montoMasAlto.filtro = key;
         montoMasAlto.monto = object[key][keyFilter];
@@ -82,14 +82,13 @@ let obtenerTotalCategoria = () => {
   
   const mesMayorGanancia = () => {
   
-    let resultObject = obtenerCantidadMayor(obtenerTotalMes(),"ganancia");
+    let resultado = obtenerCantidadMayor(obtenerTotalMes(),"ganancia");
   
-    return resultObject;
+    return resultado;
   };
   
   const mesMayorGasto = ()=>{
-    let resultado = obtenerCantidadMayor(obtenerTotalMes(),"gasto");;
-  
+    let resultado = obtenerCantidadMayor(obtenerTotalMes(),"gasto");
   
     return resultado;
   }
@@ -172,7 +171,7 @@ let obtenerTotalCategoria = () => {
       pintarOperaciones(operaciones);
     }
   
-    mostrarBalance(getBalance(operaciones));
+    mostrarBalance(boxBalance(operaciones));
     mostrarCategoria(categorias);
   };
   
